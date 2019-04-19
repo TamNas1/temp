@@ -68,14 +68,26 @@ font-size: 22px;
 
   }
   .homework p{
-      font-size: 22px;
+      font-size: 26px;
   }
 
 }
 
 
 @media (min-width: 1199px) {
+  #about-the-subject {
 
+  }
+  #about-the-subject p{
+    text-align: center;
+   font-size: 32px;
+  }
+  .homework{
+    margin-top: 1%;
+  }
+  .homework p{
 
+      font-size: 32px;
+  }
 
 }
