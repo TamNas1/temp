@@ -75,6 +75,9 @@ font-size: 22px;
 
 
 @media (min-width: 1199px) {
+  #sidebar{
+    visibility: hidden;
+  }
   #about-the-subject {
 
   }
