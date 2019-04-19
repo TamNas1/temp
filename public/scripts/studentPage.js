@@ -1,4 +1,4 @@
-window.onload=size;
+
 
 function size(){
   if (window.innerWidth<1050){
@@ -14,4 +14,5 @@ if (window.innerWidth>1199){
 mytoggle();
 }
 }
+size();
 navbar();
