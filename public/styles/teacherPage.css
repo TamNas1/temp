@@ -7,6 +7,7 @@
   margin: 0px;
 }
 button {
+  outline: none;
   box-shadow: inset 0px 39px 0px -24px #e67a73;
   background-color: var(--primary-color);
   border-radius: 9px;
@@ -137,6 +138,11 @@ hr {
 }
 
 @media (min-width: 1199px) {
+  button {
+    padding: 16px 30px;
+    font-size: 22px;
+    outline: none;
+  }
   .edit-homework {
     margin-top: 1%;
     text-align: center;
