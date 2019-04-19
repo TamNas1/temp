@@ -24,7 +24,7 @@ const extensionTypes = {
 //
 // }
 const handlePage = (str, res) => {
-  const filePath = path.join(__dirname, '..' ,'public','layouts', `${str}Page.html`);
+  const filePath = path.join(__dirname, '..' ,'public','layouts',str + "Page.html");
   fs.readFile(filePath, (err, file) => {
     if (err) {
     //  handle500(res, err)

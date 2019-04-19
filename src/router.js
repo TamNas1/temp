@@ -4,7 +4,7 @@ const handler = require('./handlers.js');
 const router = (req, res) => {
   var url = req.url;
   if (url === '/') {
-handler.page("index", res)
+handler.page("login", res)
  }
  else if (url.indexOf('public') !== -1) {
     handler.public(url, res);
