@@ -1,3 +1,5 @@
+const handler = require('./handlers.js');
+
 const router = (req, res) => {
   const { url } = req;
   if (url === '/') {
