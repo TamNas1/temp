@@ -104,9 +104,10 @@ hr {
 
 @media (max-width: 1199px) and (min-width: 650px) {
   .edit-homework {
-    margin-top: 15%;
+    margin-top: 3%;
     text-align: center;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 24px;
   }
   #about-the-subject p {
@@ -120,7 +121,7 @@ hr {
 
 @media (min-width: 1199px) {
   .edit-homework {
-    margin-top: 20%;
+    margin-top: 1%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
