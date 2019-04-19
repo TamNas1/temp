@@ -9,6 +9,9 @@ const router = (req, res) => {
   else if (url === "/student") {
     handler.page("student", res)
   }
+  else if (url === "/teacher") {
+    handler.page("teacher", res)
+  }
    else if (url.indexOf('public') !== -1) {
     handler.public(url, res);
   }
