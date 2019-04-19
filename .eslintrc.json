@@ -22,6 +22,8 @@
 
     "indent": 2,
 
-    "quotmark": "single"
+    "quotmark": "single",
+
+    "no-console" : 0
   }
 }
