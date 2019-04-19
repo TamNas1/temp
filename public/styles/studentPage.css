@@ -1,6 +1,17 @@
-.title{
+.subject{
     display: flex;
     font-size: 48px;
     margin: 0 auto;
     justify-content: center;
+}
+
+#video-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5%;
+}
+iframe{
+  height: 40vh;
+ width: 80vh;
+
 }
