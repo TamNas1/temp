@@ -1,23 +1,25 @@
 const url = require('url');
-const handler = require('./handlers.js');
+const handle = require('./handlers.js');
 
 const router = (req, res) => {
   var url = req.url;
   if (url === '/') {
-    handler.page("login", res)
+    handle.page("login", res)
   }
   else if (url === "/student") {
-    handler.page("student", res)
+    handle.page("student", res)
   }
   else if (url === "/teacher") {
-    handler.page("teacher", res)
+    handle.page("teacher", res)
   }
   else if (url === "/subjects") {
-    handler.page("subjects", res)
+    handle.page("subjects", res)
   }
    else if (url.indexOf('public') !== -1) {
-    handler.public(url, res);
+    handle.public(url, res);
   }
-
+  else {
+      handler.page("404",res);
+    }
 };
 module.exports = router;
