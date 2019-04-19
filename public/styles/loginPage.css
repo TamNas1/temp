@@ -1,0 +1,123 @@
+:root {
+  --primary-color: #f7465a;
+  --primary-color-dark: #EA394D;
+  --container-bg: #c4b3b4;
+}
+
+html,
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+img {
+  user-select: none;
+  outline: none;
+}
+
+.header {
+  margin-top: 3%;
+  text-align: center;
+}
+
+.login--container {
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 5%;
+  text-align: center;
+  max-width: 600px;
+  border: none;
+  outline: none;
+  margin-right: 5vw;
+  margin-left: 5vw;
+  width: -webkit-fill-available;
+  font-size: 1.5em;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 1s ease;
+  background: var(--container-bg);
+}
+
+.login--container:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.55);
+}
+
+
+input, button {
+  padding: 12px;
+  box-sizing:border-box;
+  outline: none;
+  width: -webkit-fill-available;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+input {
+  cursor: text;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: var(--primary-color);
+  transition: background 1s ease;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background: var(--primary-color-dark);
+
+}
+
+label {
+  visibility: hidden;
+  display: block;
+}
+
+.login--container h3 {
+  color: var(--primary-color);
+}
+
+.blank {
+  content: "";
+  height: 10vh;
+  display: block;
+}
+
+@media (max-width: 1199px) and (min-width: 650px) {
+  .header {
+    margin-top: 5%;
+  }
+  .header img {
+    height: 255px;
+    width: auto;
+  }
+  .login--container {
+    font-size: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+  }
+  button {
+    font-size: 2rem;
+  }
+  ::placeholder {
+  font-size: 2rem;
+}
+  input, button {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .login--container {
+    padding: 20px;
+    margin-top: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  button, input {
+    max-width: 400px;
+  }
+}
