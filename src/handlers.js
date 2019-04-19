@@ -11,19 +11,19 @@ const extensionTypes = {
   js: {
     'Content-Type': 'application/javascript',
   },
-  ico: {
-    'Content-Type': 'image/vnd.microsoft.icon',
-  },
   json: {
     'Content-Type': 'application/json',
   },
+  png: {
+    'Content-Type': 'image/png',
+  }
 };
 const handle500 = (res, err) => {
   res.writeHead(500);
   res.end("server error - 500, resource not found");
 
 }
-const indexHandler = (str, res) => {
+const handlePage = (str, res) => {
   const filePath = path.join(__dirname, '..', 'public', `${str}Page.html`);
   fs.readFile(filePath, (err, file) => {
     if (err) {
@@ -36,6 +36,20 @@ const indexHandler = (str, res) => {
   });
 };
 
+const handePublic = (url, res) => {
+  const ext = url.split('.')[1];
+  let pathFile = path.join(__dirname, '..', url);
+  fs.readFile(pathFile, (err, file) => {
+    if (err) {
+      handle500(res, err)
+    } else {
+      res.writeHead(200, extensionTypes[ext]);
+      res.end(file);
+    }
+  })
+}
+
 module.exports = {
-  index: indexHandler,
+  page:handlePage,
+  public:handlePublic
 };
