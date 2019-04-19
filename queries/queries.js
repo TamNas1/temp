@@ -1,5 +1,5 @@
 // const databaseConnection = require('../db_connection.js');
-
+const databaseConnection = 0;
 
 const selectquery = (sql, cb) => {
   databaseConnection.query(sql, (err, res) => {
@@ -17,11 +17,11 @@ const insertquery = (sql, args, cb) => {
     args,
     (err, res) => {
       if (err) {
-        return cb(err);
+        cb(err);
       } else {
         cb(null, res);
       }
-    }
+    },
   );
 };
 
@@ -36,7 +36,7 @@ const updatequery = (sql, cb) => {
 };
 
 module.exports = {
-  select:selectquery,
-  insert:insertquery,
-  update:updatequery
+  select: selectquery,
+  insert: insertquery,
+  update: updatequery,
 };

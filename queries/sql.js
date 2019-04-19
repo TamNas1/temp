@@ -1,24 +1,47 @@
-const query = require('./sqlquery.js')
+/* eslint-disable no-unused-vars */
+/* eslint-disable implicit-arrow-linebreak */
 
-const select = (table, id, cb) => query.select(`SELECT * from '${table}' where id = ${id}`, cb)
+const query = require('./queries.js');
 
-const checkPassword = (username, password, cb) => query.select(`SELECT count(id) from users where username = '${username}' AND password = '${password}'`, cb)
+const selectById = (table, id, cb) => query.select(`SELECT * from '${table}' where id = ${id};`, cb);
 
-const addUser = (username, password, email, cb) => query.insert(`INSERT INTO users (username,password,email) VALUES ($1,$2,$3)`, [username, password, email], cb)
+const selectByName = (table, name, cb) =>
+  query.select(`SELECT * from '${table}' where name = '${name}';`, cb);
 
-const getQuestions = (cb) => query.select(`SELECT * from qa`, cb)
+const deleteById = (table, id, cb) =>
+  query.select(`DELETE FROM ${table} WHERE id = ${id};`, cb);
 
-const getPass = (username, cb) => query.select(`SELECT password from users where username = '${username}'`, cb);
+const deleteByName = (table, name, cb) =>
+  query.select(`DELETE FROM ${table} WHERE name = '${name}';`, cb);
 
-const getScore = (username, cb) => query.select(`SELECT score from users where username='${username}'`, cb);
+const addSubject = (name, mod, cb) =>
+  query.insert('INSERT INTO Subject (name,modules) VALUES ($1,$2)',
+    [name, mod], cb);
 
-const addScore = (username, score, cb) => query.update(`UPDATE users SET score = (SELECT score from users where username='$1')+$2 where username='$1'`, [username, score], cb)
+const addSubSubject = (name, subjectId, data, cb) =>
+  query.insert('INSERT INTO Subject (name, subject_id, data) VALUES ($1,$2,$3)',
+    [name, subjectId, data], cb);
+
+const addHomework = (schoolId, subSubjectId, data, cb) =>
+  query.insert('INSERT INTO Subject (name, subject_id, data) VALUES ($1,$2,$3)',
+    [schoolId, subSubjectId, data], cb);
+
+const addSchool = (name, userName, password, active, email, phone, cb) =>
+  query.insert('INSERT INTO Subject (name, user_name, password,active,email,phone) VALUES ($1,$2,$3,$4,$5,$6)',
+    [name, userName, password, active, email, phone], cb);
+
+const updateActivation = (status, cb) =>
+  query.insert('UPDATE school (name, user_name, password,active,email,phone) VALUES ($1,$2,$3,$4,$5,$6)',
+    [status], cb);
+
 
 module.exports = {
-    userExist,
-    checkPassword,
-    addUser,
-    getQuestions,
-    addScore,
-    getPass,
-    getScore
+  selectById,
+  selectByName,
+  deleteById,
+  deleteByName,
+  addSubject,
+  addSubSubject,
+  addHomework,
+  addSchool,
+};
