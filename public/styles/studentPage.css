@@ -113,18 +113,27 @@ transition:all 0.5s ease;
 
 @media (min-width: 1199px) {
   #sidebar{
-    /* visibility: hidden; */
+    width:300px;
+
+
+  }
+  #sidebar li a{
+    font-size: 36px;
   }
   #sidebar.active{
 
   }
   #about-the-subject {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #about-the-subject p{
+    max-width: 60%;
     text-align: center;
-   font-size: 32px;
-  }
+   font-size: 28px;
+
+ }
   .homework{
     margin-top: 1%;
   }
