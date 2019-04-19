@@ -13,8 +13,28 @@
      content="Karam Ashqar, Shadi Rayan, Tamer Nasser, Majd Yaqoub"
    />
     <title>AssistED</title>
+
   </head>
-  <body>
+  <body >
+    <div id="sidebar">
+    	<div class="toggle_btns" onclick="mytoggle()">
+    		<span></span>
+    		<span></span>
+    		<span></span>
+    	</div>
+    	<ul>
+    	      <li><a href="">Functions</a></li>
+              <li><a href="">Integral</a></li>
+              <li><a href="">Derivative</a></li>
+              <li><a href="">Vectors</a></li>
+              <li><a href="">Complex Numbers</a></li>
+              <li><a href="">Trigo Shapes</a></li>
+              <li><a href="">Trigo functions</a></li>
+              <li><a href="">Exams2016</a></li>
+              <li><a href="">Exams2017</a></li>
+              <li><a href="">Exams2018</a></li>
+    	</ul>
+    </div>
     <div id="main-logo">
   <img src="../../public/assests/logo.png">
   </div>
@@ -32,25 +52,18 @@
 <p>  A function is a rule which relates the values of one variable quantity to the values of another variable quantity, and does so in such a way that the value of the second variable quantity is uniquely determined by (i.e. is a function of) the value of the first variable quantity.</p>
 
   </div>
-  <div id="sidebar">
-  	<div class="toggle_btns" onclick="mytoggle()">
-  		<span></span>
-  		<span></span>
-  		<span></span>
-  	</div>
-  	<ul>
-  	      <li><a href="">Functions</a></li>
-            <li><a href="">Integral</a></li>
-            <li><a href="">Derivative</a></li>
-            <li><a href="">Vectors</a></li>
-            <li><a href="">Complex Numbers</a></li>
-            <li><a href="">Trigo Shapes</a></li>
-            <li><a href="">Trigo functions</a></li>
-            <li><a href="">Exams2016</a></li>
-            <li><a href="">Exams2017</a></li>
-            <li><a href="">Exams2018</a></li>
-  	</ul>
-  </div>
 
+  <script type="text/javascript">
+    function mytoggle(){
+  document.getElementById("sidebar").classList.toggle('active');
+  }
+
+  function navbar(){
+if (window.innerWidth>1199){
+mytoggle();
+}
+}
+navbar();
+  </script>
   </body>
   </html>
