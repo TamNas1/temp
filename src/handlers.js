@@ -18,21 +18,22 @@ const extensionTypes = {
     'Content-Type': 'image/png',
   }
 };
-const handle500 = (res, err) => {
-  res.writeHead(500);
-  res.end("server error - 500, resource not found");
-
-}
+// const handle500 = (res, err) => {
+//   res.writeHead(500);
+//   res.end("server error - 500, resource not found");
+//
+// }
 const handlePage = (str, res) => {
-  const filePath = path.join(__dirname, '..', 'public', `${str}Page.html`);
+  const filePath = path.join(__dirname, '..' ,'public','layouts', `${str}Page.html`);
   fs.readFile(filePath, (err, file) => {
     if (err) {
-      handle500(res, err)
+    //  handle500(res, err)
+    res.end()
     } else {
-      res.writeHead(200, exType.html);
-      res.write(file);
+      res.writeHead(200, extensionTypes.html);
+      res.end(file);
+
     }
-    res.end();
   });
 };
 
