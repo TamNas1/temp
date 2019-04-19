@@ -34,9 +34,9 @@ iframe{
     padding-left: 10px;
 }
 #main-logo{
-height: 100px;
-width: 100px;
-
+  display: flex;
+  justify-content: center;
+  height: 20vh;
 }
 
 hr{
