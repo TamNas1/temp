@@ -1,0 +1,165 @@
+:root {
+  --primary-color: #f7465a;
+  --primary-color-dark: #ea394d;
+}
+
+.subjects--container {
+  display: grid;
+  margin-top: 7.5%;
+  margin-bottom: 7.5%;
+  width: 95%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px 15px;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.header {
+  margin-top: 3%;
+  text-align: center;
+}
+
+hr {
+  display: block;
+  height: 0.7px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  opacity: 0.6;
+  border: 0;
+  border-top: 2px solid var(--primary-color);
+  padding: 0;
+  background-color: var(--primary-color);
+}
+
+label {
+  visibility: hidden;
+  display: block;
+}
+
+.search--container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search--container h3 {
+  color: var(--primary-color);
+  margin-bottom: 0;
+}
+
+input,
+select,
+button {
+  padding: 12px;
+}
+
+input,
+button {
+  padding: 12px;
+  box-sizing: border-box;
+  outline: none;
+  width: -webkit-fill-available;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+input {
+  cursor: text;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  color: white;
+  background: var(--primary-color);
+  transition: background 1s ease;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: var(--primary-color-dark);
+}
+
+select {
+  background: var(--primary-color);
+  color: white;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 1s ease;
+}
+
+select:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+select option[disabled='disabled'] {
+  display: none;
+}
+
+select option:disabled {
+  display: none;
+}
+
+@media (max-width: 1199px) and (min-width: 650px) {
+  .header {
+    margin-top: 5%;
+  }
+  .subjects--container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .item {
+    font-size: 1.85rem;
+  }
+  .header img {
+    height: 255px;
+    width: auto;
+  }
+  .search--container {
+    font-size: 2.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+  }
+
+  button,
+  select {
+    font-size: 2rem;
+  }
+
+  option {
+    font-size: 1.25rem;
+  }
+
+  ::placeholder {
+    font-size: 2rem;
+  }
+  input,
+  button,
+  select {
+    padding: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .subjects--container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .search--container {
+    margin-top: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  button,
+  input {
+    max-width: 200px;
+  }
+}
