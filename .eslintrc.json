@@ -14,28 +14,14 @@
     "ecmaVersion": 2018
   },
   "rules": {
-    "semi": "always",
+    "semi": [2,"always"],
 
-    "camelcase": true,
+    "camelcase": 2,
 
-    "eqeqeq": true,
-
-    "eqnull": true,
+    "eqeqeq":2,
 
     "indent": 2,
 
-    "latedef": true,
-
-    "newcap": true,
-
-    "quotmark": "single",
-
-    "trailing": true,
-
-    "undef": true,
-
-    "unused": true,
-
-    "maxlen": 80
+    "quotmark": "single"
   }
 }
