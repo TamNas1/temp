@@ -12,20 +12,24 @@
 }
 iframe{
   height: 40vh;
- width: 80vh;
+  width: 80vh;
 
 }
-.homework{
-  display: grid;
+.homework {
+      margin-top: 6%;
+      display: grid;
       grid-template-columns: auto auto;
       justify-content: center;
       color: blue;
-
-
 }
 .pdficon {
-  margin-top: 3%;
+
     width: 50px;
     height: 50px;
     padding-left: 10px;
+}
+#main-logo{
+height: 100px;
+width: 100px;
+
 }
