@@ -27,8 +27,7 @@ const indexHandler = (str, res) => {
   const filePath = path.join(__dirname, '..', 'public', `${str}Page.html`);
   fs.readFile(filePath, (err, file) => {
     if (err) {
-      res.writeHead(500, exType.html);
-      res.end('<h1>sorry, something went wrong</h1>');
+      handle500(res, err)
     } else {
       res.writeHead(200, exType.html);
       res.write(file);
