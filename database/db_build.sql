@@ -40,8 +40,9 @@ INSERT INTO subject (name,modules) VALUES
 CREATE TABLE IF NOT EXISTS sub_subjects(
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
-  subject_id TEXT NOT NULL,
-  data TEXT NOT NULL);
+  subject_id INTEGER NOT NULL,
+  data TEXT NOT NULL
+);
 
 INSERT INTO sub_subject(name, subject_id, data) VALUES
 ('Functions1',1,"this is this but this is not this"),
@@ -49,6 +50,22 @@ INSERT INTO sub_subject(name, subject_id, data) VALUES
 ('Functions2',2,"this is this but this is not this"),
 ('Functions3',3,"this is this but this is not this"),
 ('Functions4',4,"this is this but this is not this");
+
+
+CREATE TABLE IF NOT EXISTS home_works(
+    id SERIAL PRIMARY KEY,
+    school_id INTEGER NOT NULL,
+    sub_subject_id INTEGER NOT NULL,
+    data TEXT NOT NULL
+  );
+
+INSERT INTO home_works(school_id, sub_subject_id, data) VALUES
+(1,1,"homework11"),
+(2,2,"homework22"),
+(2,1,"homework33"),
+(2,2,"homework44"),
+(3,1,"homework55"),
+(3,2,"homework33");
 
 
 COMMIT;
