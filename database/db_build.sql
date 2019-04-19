@@ -23,11 +23,32 @@ INSERT INTO schools (name,username,password,email,active,phone) VALUES
 
 
  CREATE TABLE IF NOT EXISTS subjects (
-   idSERIAL PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
    name VARCHAR,
-   moduels INTEGER NOT NULL
+   modules INTEGER NOT NULL
  );
 
+INSERT INTO subject (name,modules) VALUES
+('Mathmatics',3),
+('Mathmatics',4),
+('Mathmatics',5),
+('Subject 1',3),
+('Subject 2 ',4),
+('Subject 3',5);
+
+
+CREATE TABLE IF NOT EXISTS sub_subjects(
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  subject_id TEXT NOT NULL,
+  data TEXT NOT NULL);
+
+INSERT INTO sub_subject(name, subject_id, data) VALUES
+('Functions1',1,"this is this but this is not this"),
+('Functions2',2,"this is this but this is not this"),
+('Functions2',2,"this is this but this is not this"),
+('Functions3',3,"this is this but this is not this"),
+('Functions4',4,"this is this but this is not this");
 
 
 COMMIT;
