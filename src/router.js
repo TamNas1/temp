@@ -4,3 +4,4 @@ const router = (req, res) => {
     console.log('home page');
   }
 };
+module.exports = router;
