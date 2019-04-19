@@ -19,7 +19,7 @@ const router = (req, res) => {
     handle.public(url, res);
   }
   else {
-      handler.page("404",res);
+      handle.page("404",res);
     }
 };
 module.exports = router;
