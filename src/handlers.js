@@ -36,7 +36,7 @@ const handlePage = (str, res) => {
   });
 };
 
-const handePublic = (url, res) => {
+const handlePublic = (url, res) => {
   const ext = url.split('.')[1];
   let pathFile = path.join(__dirname, '..', url);
   fs.readFile(pathFile, (err, file) => {
