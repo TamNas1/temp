@@ -14,6 +14,8 @@ const router = (req, res) => {
     handle.signIn(req, res);
   } else if (url.indexOf('public') !== -1) {
     handle.public(url, res);
+  } else if (url === '/getSubjects') {
+    handle.handleSubjects(res);
   } else {
     handle.page('404', res);
   }
