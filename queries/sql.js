@@ -37,7 +37,7 @@ const updateActivation = (status, cb) =>
     [status], cb);
 
 const selectSubSubjectBySubjectId = (id, cb) =>
-  query.select('SELECT * from subSubject where subjectId = $1;', [id], cb);
+  query.select(`SELECT * from sub_subjects where subject_id = ${id};`, cb);
 
 const checkPassword = (username, cb) =>
   query.insert('SELECT password from schools where username = $1', [username], cb);
