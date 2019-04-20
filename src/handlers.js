@@ -86,11 +86,10 @@ const handleSubjects = (res) => {
 const handleHomeworks = (res) => {
   queries.selectAll('home_works', (err, results) => {
     if (err) handle500(res);
-    console.log(results);
     res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end(JSON.stringify(results.rows))
-  })
-}
+    res.end(JSON.stringify(results.rows));
+  });
+};
 
 module.exports = {
   page: handlePage,
