@@ -78,14 +78,24 @@ const handleSignIn = (req, res) => {
 const handleSubjects = (res) => {
   queries.selectAll('subjects', (err, results) => {
     if (err) handle500(res);
-    res.writeHead(200, { 'Content-Type': 'text/hrml' });
+    res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(JSON.stringify(results.rows));
   });
 };
+
+const handleHomeworks = (res) => {
+  queries.selectAll('home_works', (err, results) => {
+    if (err) handle500(res);
+    console.log(results);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(JSON.stringify(results.rows))
+  })
+}
 
 module.exports = {
   page: handlePage,
   public: handlePublic,
   signIn: handleSignIn,
   handleSubjects,
+  handleHomeworks,
 };
