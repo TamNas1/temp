@@ -6,6 +6,7 @@
   padding: 0px;
   margin: 0px;
 }
+
 button {
   outline: none;
   box-shadow: inset 0px 39px 0px -24px #e67a73;
@@ -19,6 +20,7 @@ button {
   padding: 8px 15px;
   text-decoration: none;
 }
+
 .subject {
   color: var(--primary-color);
   display: flex;
@@ -26,6 +28,7 @@ button {
   margin: 0 auto;
   justify-content: center;
 }
+
 .edit-homework {
   margin-top: 3%;
   text-align: center;
@@ -33,6 +36,7 @@ button {
   margin-right: auto;
   font-size: 18px;
 }
+
 #video-container {
   display: flex;
   justify-content: center;
@@ -129,6 +133,7 @@ hr {
     margin-right: auto;
     font-size: 24px;
   }
+
   #about-the-subject p {
     font-size: 26px;
   }
@@ -144,6 +149,7 @@ hr {
     font-size: 22px;
     outline: none;
   }
+
   .edit-homework {
     margin-top: 1%;
     text-align: center;
@@ -151,6 +157,7 @@ hr {
     margin-right: auto;
     font-size: 28px;
   }
+
   #sidebar {
     width: 300px;
   }
@@ -159,8 +166,7 @@ hr {
     font-size: 36px;
   }
 
-  #sidebar.active {
-  }
+  #sidebar.active {}
 
   #about-the-subject {
     display: flex;

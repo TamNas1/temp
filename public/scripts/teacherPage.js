@@ -3,6 +3,7 @@ function size() {
     document.getElementById('logo').src = '../../public/assests/minilogo.png';
   }
 }
+
 function mytoggle() {
   document.getElementById('sidebar').classList.toggle('active');
 }

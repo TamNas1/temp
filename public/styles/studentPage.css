@@ -122,8 +122,7 @@ hr {
     font-size: 36px;
   }
 
-  #sidebar.active {
-  }
+  #sidebar.active {}
 
   #about-the-subject {
     display: flex;

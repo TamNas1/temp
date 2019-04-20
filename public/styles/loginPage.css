@@ -41,10 +41,9 @@ img {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.55);
 }
 
-
 input, button {
   padding: 12px;
-  box-sizing:border-box;
+  box-sizing: border-box;
   outline: none;
   width: -webkit-fill-available;
   margin-right: 10px;
@@ -66,7 +65,6 @@ button {
 
 button:hover {
   background: var(--primary-color-dark);
-
 }
 
 label {
@@ -88,35 +86,40 @@ label {
   .header {
     margin-top: 5%;
   }
+
   .header img {
     height: 255px;
     width: auto;
   }
+
   .login--container {
     font-size: 2.5rem;
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
   }
+
   button {
     font-size: 2rem;
   }
+
   ::placeholder {
-  font-size: 2rem;
-}
+    font-size: 2rem;
+  }
+
   input, button {
     padding: 40px;
   }
 }
 
 @media (min-width: 1200px) {
-
   .login--container {
     padding: 20px;
     margin-top: 2.5%;
     margin-left: auto;
     margin-right: auto;
   }
+
   button, input {
     max-width: 400px;
   }
