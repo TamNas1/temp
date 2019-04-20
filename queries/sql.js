@@ -36,7 +36,7 @@ const updateActivation = (status, cb) =>
   query.insert('UPDATE school (name, user_name, password,active,email,phone) VALUES ($1,$2,$3,$4,$5,$6);',
     [status], cb);
 
-const checkPassword = (username, password, cb) => query.insert(`SELECT count(id) from schools where username = $1 AND password = $2`,[username, password], cb);
+const checkPassword = (username, cb) => query.insert(`SELECT password from schools where username = $1`,[username], cb);
 
 module.exports = {
   selectAll,
@@ -50,4 +50,4 @@ module.exports = {
   addSchool,
   updateActivation,
   checkPassword,
-};
+}
