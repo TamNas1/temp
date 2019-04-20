@@ -88,10 +88,20 @@ const handleHomeworks = (res) => {
   });
 };
 
+const handleSubSubjects = (res) => {
+  queries.selectAll('home_works', (err, results) => {
+    if (err) handle500(res);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(JSON.stringify(results.rows));
+  });
+};
+
+
 module.exports = {
   page: handlePage,
   public: handlePublic,
   signIn: handleSignIn,
   handleSubjects,
   handleHomeworks,
+  handleSubSubjects,
 };
