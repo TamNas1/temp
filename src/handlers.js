@@ -56,9 +56,13 @@ const handleSignIn = (req, res) => {
   });
   req.on("end", () => {
     if (data != null) {
+      data = JSON.parse(data);
+    console.log("backend data",data);
+     res.end(JSON.stringify(data));
 
     }
-  }
+  })
+}
 
 
 module.exports = {

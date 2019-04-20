@@ -1,3 +1,5 @@
+var userVal = document.getElementById('username');
+var passVal = document.getElementById('password');
 var loginBtn = document.getElementById('signIn');
 
 loginBtn.addEventListener("click",function(e){
@@ -7,11 +9,12 @@ fetchsignIn(loginBtn.value,signin);
 
 })
 function fetchsignIn (value,cb){
-fetch("/signin?"+cb,
+fetch("/signin",
 {
-  method:POST,
+  method:"POST",
    body:JSON.stringify({
-    value:value
+    user:userVal.value,
+    pass:passVal.value
    })
 }
 ).then(function(res){
