@@ -2,6 +2,23 @@
 
 [Link to our application](https://assistedapp.herokuapp.com/)
 
+
+### Statistics
+
+**There have been significant improvements in the educational levels of
+Arabs, but the gaps between Arabs and Jews are still large.**
+
+###### Dropping Out of High School
+Dropout rates among Arab students continue to be above the rates of
+Jewish students. In 2016, by age 17, 19.95% of Arab students had dropped
+out of school versus 4% of Jewish students. This makes them ineligible
+for most vocational training programs, and reduces their employment
+prospects considerably. 
+
+###### Not Finishing Highschool With Scores
+
+More than 47% of the arab students in Israel finished highschools without finishing all the bagrut exams and successing in them ( getting a score above 55 )
+
 ### Minimum viable product (MVP) ?
 
 * Our main target market for now are the arab highschools in Israel.
