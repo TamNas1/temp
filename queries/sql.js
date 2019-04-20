@@ -3,7 +3,7 @@
 
 const query = require('./queries.js');
 
-const selectAll = (table, cb) => query.select(`SELECT * from '${table}';`, cb);
+const selectAll = (table, cb) => query.select(`SELECT * from ${table};`, cb);
 
 const selectById = (table, id, cb) => query.select(`SELECT * from '${table}' where id = ${id};`, cb);
 
@@ -36,8 +36,11 @@ const updateActivation = (status, cb) =>
   query.insert('UPDATE school (name, user_name, password,active,email,phone) VALUES ($1,$2,$3,$4,$5,$6);',
     [status], cb);
 
-const selectSubSubjectBySubjectId = (id, cb) => query.select(`SELECT * from subSubject where subjectId = ${id};`, cb);
+const selectSubSubjectBySubjectId = (id, cb) =>
+  query.select('SELECT * from subSubject where subjectId = $1;', [id], cb);
 
+const checkPassword = (username, cb) =>
+  query.insert('SELECT password from schools where username = $1', [username], cb);
 
 module.exports = {
   selectAll,
@@ -50,5 +53,6 @@ module.exports = {
   addHomework,
   addSchool,
   updateActivation,
+  checkPassword,
   selectSubSubjectBySubjectId,
 };

@@ -28,7 +28,7 @@ INSERT INTO schools (name,username,password,email,active,phone) VALUES
    modules INTEGER NOT NULL
  );
 
-INSERT INTO subject (name,modules) VALUES
+INSERT INTO subjects (name,modules) VALUES
 ('Mathmatics',3),
 ('Mathmatics',4),
 ('Mathmatics',5),
@@ -44,12 +44,12 @@ CREATE TABLE IF NOT EXISTS sub_subjects(
   data TEXT NOT NULL
 );
 
-INSERT INTO sub_subject(name, subject_id, data) VALUES
-('Functions1',1,"this is this but this is not this"),
-('Functions2',2,"this is this but this is not this"),
-('Functions2',2,"this is this but this is not this"),
-('Functions3',3,"this is this but this is not this"),
-('Functions4',4,"this is this but this is not this");
+INSERT INTO sub_subjects(name, subject_id, data) VALUES
+('Functions1',1,'this is this but this is not this1'),
+('Functions2',2,'this is this but this is not this2'),
+('Functions2',2,'this is this but this is not this3'),
+('Functions3',3,'this is this but this is not this4'),
+('Functions4',4,'this is this but this is not this5');
 
 
 CREATE TABLE IF NOT EXISTS home_works(
@@ -60,12 +60,12 @@ CREATE TABLE IF NOT EXISTS home_works(
   );
 
 INSERT INTO home_works(school_id, sub_subject_id, data) VALUES
-(1,1,"homework11"),
-(2,2,"homework22"),
-(2,1,"homework33"),
-(2,2,"homework44"),
-(3,1,"homework55"),
-(3,2,"homework33");
+(1,1,'homework11'),
+(2,2,'homework22'),
+(2,1,'homework33'),
+(2,2,'homework44'),
+(3,1,'homework55'),
+(3,2,'homework33');
 
 
 COMMIT;

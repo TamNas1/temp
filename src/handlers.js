@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const queries = require('../queries/sql.js');
 
 const extensionTypes = {
   html: {
@@ -49,7 +50,58 @@ const handlePublic = (url, res) => {
   });
 };
 
+const handleSignIn = (req, res) => {
+  let data = '';
+  req.on('data', (chunk) => {
+    data += chunk.toString();
+  });
+  req.on('end', () => {
+    if (data != null) {
+      data = JSON.parse(data);
+      queries.checkPassword(data.user, (err, success) => {
+        let message = '';
+        if (success.rows[0]) {
+          success.rows[0].password === data.pass ? message = 'Successfully logged in' : message = 'Invalid username/password';
+        } else {
+          message = "Username doesn't exist";
+        }
+        res.writeHead(200, { 'content-type': 'text/html' });
+        res.end(JSON.stringify({ msg: message }));
+      });
+    }
+  });
+};
+
+const handleSubjects = (res) => {
+  queries.selectAll('subjects', (err, results) => {
+    if (err) handle500(res);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(JSON.stringify(results.rows));
+  });
+};
+
+const handleHomeworks = (res) => {
+  queries.selectAll('home_works', (err, results) => {
+    if (err) handle500(res);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(JSON.stringify(results.rows));
+  });
+};
+
+const handleSubSubjects = (res) => {
+  queries.selectAll('sub_subjects', (err, results) => {
+    if (err) handle500(res);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(JSON.stringify(results.rows));
+  });
+};
+
+
 module.exports = {
   page: handlePage,
   public: handlePublic,
+  signIn: handleSignIn,
+  handleSubjects,
+  handleHomeworks,
+  handleSubSubjects,
 };
