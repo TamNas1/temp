@@ -2,6 +2,12 @@
 
 [Link to our application](https://assistedapp.herokuapp.com/)
 
+### Minimum viable product (MVP) ?
+
+* Our main target market for now are the arab highschools in Israel.
+* The website will have only the languages that are spoken/used for education in Israel.
+* The materials that we will have for now are only about the main subjects. *as English, Arabic, Hebrew, Mathmatics, Chemistry ..
+
 ### How can we make this scalable? 
 
 * The teachers has the ability to edit the materials, add, upload and more.
