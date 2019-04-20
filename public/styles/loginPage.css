@@ -52,6 +52,7 @@ input, button {
 
 input {
   cursor: text;
+  border: 1px white solid;
 }
 
 button {
