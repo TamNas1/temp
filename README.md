@@ -78,6 +78,10 @@ More than 47% of the arab students in Israel finished highschools without finish
 * nodemon - for hosting locally.
 * Node.js - backend.
 
+## Workshops we had
+
+![Workshop 1](https://raw.githubusercontent.com/tamerNasser/temp/master/public/assests/work1.jpeg)
+![Workshop 2](https://raw.githubusercontent.com/tamerNasser/temp/master/public/assests/work2.jpeg)
 
 ## Partners
 
