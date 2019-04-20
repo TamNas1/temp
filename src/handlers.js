@@ -59,7 +59,16 @@ const handleSignIn = (req, res) => {
     if (data != null) {
       data = JSON.parse(data);
       queries.checkPassword(data.user, (err,success)=>{
-        res.end(success.rowCount == 1 ? "true" : success.rowCount == 0 ? "false" : "Error");
+        let message = '';
+        if( success.rows[0] )
+        success.rows[0].password == data.pass ? message = "Successfully logged in" : message = "Invalid username/password";
+        else
+        message = "Username doesn't exist";
+
+        res.writeHead(200,{'content-type': 'text/html'});
+        res.end(JSON.stringify({msg:message}));
+
+
       })
 
     }
