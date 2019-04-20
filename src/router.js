@@ -18,6 +18,8 @@ const router = (req, res) => {
     handle.handleSubjects(res);
   } else if (url === '/getHomeworks') {
     handle.handleHomeworks(res);
+  } else if (url === '/getSubSubject') {
+    handle.subSubjects(res);
   } else {
     handle.page('404', res);
   }
