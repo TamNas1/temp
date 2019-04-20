@@ -48,6 +48,7 @@ const handlePublic = (url, res) => {
     }
   });
 };
+
 const handleSignIn = (req, res) => {
   let data = "";
   req.on("data", chunk => {
@@ -63,4 +64,5 @@ const handleSignIn = (req, res) => {
 module.exports = {
   page: handlePage,
   public: handlePublic,
+  signIn:handleSignIn
 };
