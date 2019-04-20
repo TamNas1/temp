@@ -1,4 +1,3 @@
-// const url = require('url');
 const handle = require('./handlers.js');
 
 const router = (req, res) => {
@@ -11,6 +10,9 @@ const router = (req, res) => {
     handle.page('teacher', res);
   } else if (url === '/subjects') {
     handle.page('subjects', res);
+  }
+  else if(url === '/signin'){
+
   } else if (url.indexOf('public') !== -1) {
     handle.public(url, res);
   } else {
