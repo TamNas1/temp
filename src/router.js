@@ -16,6 +16,10 @@ const router = (req, res) => {
     handle.public(url, res);
   } else if (url === '/getSubjects') {
     handle.handleSubjects(res);
+  } else if (url === '/getHomeworks') {
+    handle.handleHomeworks(res);
+  } else if (url === '/getSubSubjects') {
+    handle.handleSubSubjects(res);
   } else {
     handle.page('404', res);
   }

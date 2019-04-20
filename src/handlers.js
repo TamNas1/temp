@@ -58,19 +58,16 @@ const handleSignIn = (req, res) => {
   req.on('end', () => {
     if (data != null) {
       data = JSON.parse(data);
-      queries.checkPassword(data.user, (err,success)=>{
+      queries.checkPassword(data.user, (err, success) => {
         let message = '';
-        if( success.rows[0] )
-        success.rows[0].password == data.pass ? message = "Successfully logged in" : message = "Invalid username/password";
-        else
-        message = "Username doesn't exist";
-
-        res.writeHead(200,{'content-type': 'text/html'});
-        res.end(JSON.stringify({msg:message}));
-
-
-      })
-
+        if (success.rows[0]) {
+          success.rows[0].password === data.pass ? message = 'Successfully logged in' : message = 'Invalid username/password';
+        } else {
+          message = "Username doesn't exist";
+        }
+        res.writeHead(200, { 'content-type': 'text/html' });
+        res.end(JSON.stringify({ msg: message }));
+      });
     }
   });
 };
@@ -78,14 +75,33 @@ const handleSignIn = (req, res) => {
 const handleSubjects = (res) => {
   queries.selectAll('subjects', (err, results) => {
     if (err) handle500(res);
-    res.writeHead(200, { 'Content-Type': 'text/hrml' });
+    res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(JSON.stringify(results.rows));
   });
 };
+
+const handleHomeworks = (res) => {
+  queries.selectAll('home_works', (err, results) => {
+    if (err) handle500(res);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(JSON.stringify(results.rows));
+  });
+};
+
+const handleSubSubjects = (res) => {
+  queries.selectAll('sub_subjects', (err, results) => {
+    if (err) handle500(res);
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(JSON.stringify(results.rows));
+  });
+};
+
 
 module.exports = {
   page: handlePage,
   public: handlePublic,
   signIn: handleSignIn,
   handleSubjects,
+  handleHomeworks,
+  handleSubSubjects,
 };
