@@ -61,7 +61,6 @@ const handleSignIn = (req, res) => {
       queries.checkPassword(data.user, (err,success)=>{
         res.end(success.rowCount == 1 ? "true" : success.rowCount == 0 ? "false" : "Error");
       })
-  ///  console.log("backend data",data);
 
     }
   })
