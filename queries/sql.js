@@ -3,7 +3,7 @@
 
 const query = require('./queries.js');
 
-const selectAll = (table, cb) => query.select(`SELECT * from '${table}';`, cb);
+const selectAll = (table, cb) => query.select(`SELECT * from ${table};`, cb);
 
 const selectById = (table, id, cb) => query.select(`SELECT * from '${table}' where id = ${id};`, cb);
 
