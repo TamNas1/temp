@@ -3,6 +3,17 @@
   --primary-color-dark: #ea394d;
 }
 
+.item {
+    padding: 20px;
+    transition: box-shadow 1s ease, background 1s ease;
+    font-size: 1.225rem;
+    max-width: none;
+}
+
+.item:hover {
+  background: var(--primary-color-dark);
+}
+
 .subjects--container {
   display: grid;
   margin-top: 7.5%;
@@ -75,22 +86,27 @@ input {
 }
 
 button {
-  border: none;
+  border: 1px solid black;
   cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
   color: white;
   background: var(--primary-color);
-  transition: background 1s ease;
+  transition: background 1s ease, box-shadow 1s ease;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
 button:hover {
   background: var(--primary-color-dark);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.55);
+
 }
 
 select {
   background: var(--primary-color);
   color: white;
+  cursor: pointer;
   border-radius: 4px;
   outline: none;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
@@ -151,7 +167,9 @@ select option:disabled {
 
 @media (min-width: 1200px) {
   .subjects--container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 2.5%;
+    grid-template-columns: 25% 25% 25%;
+    justify-content: center;
   }
   .search--container {
     margin-top: 2.5%;
