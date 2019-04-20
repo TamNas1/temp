@@ -1,5 +1,5 @@
-// const databaseConnection = require('../db_connection.js');
-const databaseConnection = 0;
+const databaseConnection = require('../database/db_connection.js');
+// const databaseConnection = 0;
 
 const selectquery = (sql, cb) => {
   databaseConnection.query(sql, (err, res) => {
