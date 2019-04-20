@@ -4,8 +4,9 @@ function size() {
   }
 }
 
+
 function mytoggle() {
-  document.getElementById('sidebar').classList.toggle('active');
+  document.getElementById('wrapper').classList.toggle('active');
 }
 
 function navbar() {
