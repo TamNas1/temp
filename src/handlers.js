@@ -49,7 +49,24 @@ const handlePublic = (url, res) => {
   });
 };
 
+const handleSignIn = (req, res) => {
+  let data = "";
+  req.on("data", chunk => {
+    data += chunk.toString();
+  });
+  req.on("end", () => {
+    if (data != null) {
+      data = JSON.parse(data);
+    console.log("backend data",data);
+     res.end(JSON.stringify(data));
+
+    }
+  })
+}
+
+
 module.exports = {
   page: handlePage,
   public: handlePublic,
+  signIn:handleSignIn
 };
