@@ -89,7 +89,7 @@ const handleHomeworks = (res) => {
 };
 
 const handleSubSubjects = (res) => {
-  queries.selectAll('sub_subjects', (err, results) => {
+  queries.selectSubSubjectBySubjectId(3, (err, results) => {
     if (err) handle500(res);
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(JSON.stringify(results.rows));
