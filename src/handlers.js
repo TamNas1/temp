@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const queries = require('../queries/sql.js');
 
 const extensionTypes = {
   html: {
@@ -57,8 +58,9 @@ const handleSignIn = (req, res) => {
   req.on("end", () => {
     if (data != null) {
       data = JSON.parse(data);
-    console.log("backend data",data);
-     res.end(JSON.stringify(data));
+      queries.checkPassword(data.user, (err,success)=>{
+        res.end(success.rowCount == 1 ? "true" : success.rowCount == 0 ? "false" : "Error");
+      })
 
     }
   })
