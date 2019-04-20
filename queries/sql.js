@@ -36,6 +36,8 @@ const updateActivation = (status, cb) =>
   query.insert('UPDATE school (name, user_name, password,active,email,phone) VALUES ($1,$2,$3,$4,$5,$6);',
     [status], cb);
 
+const selectSubSubjectBySubjectId = (id, cb) => query.select(`SELECT * from subSubject where subjectId = ${id};`, cb);
+
 
 module.exports = {
   selectAll,
@@ -48,4 +50,5 @@ module.exports = {
   addHomework,
   addSchool,
   updateActivation,
+  selectSubSubjectBySubjectId,
 };
