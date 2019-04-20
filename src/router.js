@@ -10,9 +10,8 @@ const router = (req, res) => {
     handle.page('teacher', res);
   } else if (url === '/subjects') {
     handle.page('subjects', res);
-  }
-  else if(url === '/signin'){
-    handle.signIn(req,res);
+  } else if (url === '/signin') {
+    handle.signIn(req, res);
   } else if (url.indexOf('public') !== -1) {
     handle.public(url, res);
   } else {
