@@ -48,6 +48,17 @@ const handlePublic = (url, res) => {
     }
   });
 };
+const handleSignIn = (req, res) => {
+  let data = "";
+  req.on("data", chunk => {
+    data += chunk.toString();
+  });
+  req.on("end", () => {
+    if (data != null) {
+
+    }
+  }
+
 
 module.exports = {
   page: handlePage,
