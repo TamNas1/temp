@@ -49,6 +49,12 @@ More than 47% of the arab students in Israel finished highschools without finish
 * Buy our service :).
 * Introduce the platform to their students.
 
+**Your role:**
+
+* Share this to relevant people
+* Use our platform if you're a highschool student
+* Recommend us.
+
 
 ## How can we make this scalable? 
 
