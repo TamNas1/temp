@@ -2,6 +2,14 @@
 
 [Link to our application](https://assistedapp.herokuapp.com/)
 
+### How can we make this scalable? 
+
+* The teachers has the ability to edit the materials, add, upload and more.
+* We will have our own 'content writers' who will add materials and update them accordingly.
+* If we decided to go international, we will add choose your country in the login page, or dynamically detect which country is the teacher connected from by reading his IP Address. 
+* Multiply languages will be supported ( as a stretch goal ).
+
+
 ### Tools & Technologies we used
 * Heroku - For deploying/hosting server and database.
 * Tape - for testing.
