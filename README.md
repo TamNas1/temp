@@ -6,7 +6,7 @@
 
 * Our main target market for now are the arab highschools in Israel.
 * The website will have only the languages that are spoken/used for education in Israel.
-* The materials that we will have for now are only about the main subjects. *as English, Arabic, Hebrew, Mathmatics, Chemistry ..
+* The materials that we will have for now are only about the main subjects. *as English, Arabic, Hebrew, Mathmatics, Chemistry ..*
 
 ### How can we make this scalable? 
 
