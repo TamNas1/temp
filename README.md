@@ -53,6 +53,6 @@ More than 47% of the arab students in Israel finished highschools without finish
 ## Team members
 
 * Karam Ashqar: [Github](https://github.com/karam1ashqar), [Linkedin](https://www.linkedin.com/in/karam1ashqar/)
-* Shadi Rayan: [Github](https://github.com/mrfong), [Linkedin](https://www.linkedin.com/in/shadirayan/)
+* Shadi Rayan: [Github](https://github.com/shadiray), [Linkedin](https://www.linkedin.com/in/shadirayan/)
 * Majd Yaqoub: [Github](https://github.com/majdya), [Linkedin](https://www.linkedin.com/in/majd-yaqub/)
 * Tamer Nasser: [Github](https://github.com/tamerNasser), [Linkedin](https://www.linkedin.com/in/tamernasser/)
