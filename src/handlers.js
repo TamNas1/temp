@@ -51,11 +51,11 @@ const handlePublic = (url, res) => {
 };
 
 const handleSignIn = (req, res) => {
-  let data = "";
-  req.on("data", chunk => {
+  let data = '';
+  req.on('data', (chunk) => {
     data += chunk.toString();
   });
-  req.on("end", () => {
+  req.on('end', () => {
     if (data != null) {
       data = JSON.parse(data);
       queries.checkPassword(data.user, (err,success)=>{
@@ -72,12 +72,20 @@ const handleSignIn = (req, res) => {
       })
 
     }
-  })
-}
+  });
+};
 
+const handleSubjects = (res) => {
+  queries.selectAll('subjects', (err, results) => {
+    if (err) handle500(res);
+    res.writeHead(200, { 'Content-Type': 'text/hrml' });
+    res.end(JSON.stringify(results.rows));
+  });
+};
 
 module.exports = {
   page: handlePage,
   public: handlePublic,
-  signIn:handleSignIn
+  signIn: handleSignIn,
+  handleSubjects,
 };
