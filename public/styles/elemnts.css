@@ -1,71 +1,58 @@
 :root {
-  --primary-color: #f7465a;
+  --primary-color: #f0384d;
 }
 
-#arrow {
-  margin-left: 60px;
-  width: 20px;
-  height: 20px;
+.header {
+  /* background-color: #666; */
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 20% 60% 20%;
+  justify-items: center;
 }
 
-button {
+#our-logo {
+  height: 12vh;
+  width: 15vh;
+}
+
+/* button {
   background-color: var(--primary-color);
   border-radius: 9px;
-  color: #363033;
-  border: 1px solid #6a6060;
-  font-size: 18px;
-  padding: 3px 5px;
+  color: #fff;
+  border: 1px solid #fff;
+  font-size: 16px;
+  padding: 3px 4px;
+} */
+.btn {
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid var(--primary-color);
+  display: inline-block;
+  cursor: pointer;
+  color: #f51e1e;
+  font-family: Arial;
+  font-size: 15px;
+  padding: 5px 15px;
+  text-decoration: none;
+  /* text-shadow: 0px 1px 0px #854629; */
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn:active {
+  position: relative;
+  top: 1px;
 }
 
 hr {
   display: block;
   max-width: 99%;
   height: 2px;
-  border: 1;
-  border-top: 2px solid var(--primary-color);
+  border-top: 1px solid var(--primary-color);
   background-color: var(--primary-color);
-}
-
-.toggle_btns span {
-  display: block;
-  width: 40px;
-  height: 10px;
-  background: var(--primary-color);
-  margin: 5px 0px;
-}
-
-.sidebar-brand .toggle_btns {
-  position: absolute;
-  left: 20px;
-}
-
-.header {
-  display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 15% 65% 20%;
-  justify-items: center;
-}
-
-#main-logo {
-  display: grid;
-  justify-content: center;
-}
-
-#main-logo img {
-  height: 10vh;
-  width: 10vh;
-}
-
-.pdficon {
-  width: 50px;
-  height: 50px;
-  padding-left: 10px;
-}
-
-.content {
-  display: grid;
-  grid-template-rows: 8fr 1fr 3fr 1fr 3fr;
-  grid-row-gap: 1%;
 }
 
 .video-container {}
@@ -77,10 +64,17 @@ iframe {
   height: 90%;
 }
 
-#data{
+#data {
   max-width: 95%;
   margin-left: 2.5%
 }
+
+.pdficon {
+  width: 50px;
+  height: 50px;
+  padding-left: 10px;
+}
+
 .edit-homework {
   max-width: 90%;
   margin-left: 5%
