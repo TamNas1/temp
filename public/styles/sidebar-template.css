@@ -1,46 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#arrow {
+  margin-left: 40%;
+  width: 20px;
+  height: 20px;
+}
+
 #wrapper {
-  padding-left: 70px;
-  transition: all .4s ease 0s;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar-wrapper video-container"
+    "sidebar-wrapper data"
+    "sidebar-wrapper edit-homework";
+  padding-left: 9%;
+  transition: all .3s ease 0s;
   height: 100%;
 }
 
 #sidebar-wrapper {
-  margin-left: -150px;
-  left: 70px;
-  width: 150px;
+  margin-left: -20%;
+  left: 8%;
+  width: 20%;
   background: #222;
   position: fixed;
   height: 100%;
   z-index: 10000;
-  transition: all .4s ease 0s;
+  transition: all .3s ease 0s;
 }
 
 .sidebar-nav {
   display: block;
   float: left;
-  width: 150px;
+  width: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-#page-content-wrapper {
-  padding-left: 0;
-  margin-left: 0;
-  width: 100%;
-  height: auto;
+#page-content-wrapper {}
+
+.content {
+  display: grid;
+  grid-template-rows: 8fr 1fr 3fr 1fr 3fr;
+  grid-row-gap: 1%;
 }
 
+
 #wrapper.active {
-  padding-left: 150px;
+  padding-left: 21%;
 }
 
 #wrapper.active #sidebar-wrapper {
-  left: 150px;
+  left: 20%;
 }
 
-#page-content-wrapper {
-  width: 100%;
+#wrapper.active #arrow {
+  transform: rotate(180deg);
 }
 
 #sidebar_menu li a,
@@ -49,20 +68,16 @@
   display: block;
   float: left;
   text-decoration: none;
-  width: 150px;
+  width: 100%;
   background: #252525;
   border-top: 1px solid #373737;
   border-bottom: 1px solid #1A1A1A;
-  -webkit-transition: background .5s;
-  -moz-transition: background .5s;
-  -o-transition: background .5s;
-  -ms-transition: background .5s;
   transition: background .5s;
 }
 
 .sidebar_name {
   padding-top: 25px;
-  color: #fff;
+  color: red;
   opacity: .7;
 }
 
@@ -91,7 +106,7 @@
 .sidebar-nav>.sidebar-brand {
   height: 65px;
   line-height: 60px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .sidebar-nav>.sidebar-brand a {
@@ -103,18 +118,11 @@
   background: none;
 }
 
-.content-header {
-  height: 65px;
-  line-height: 65px;
+.header h1 {
+  line-height: 10vh;
 }
 
-.content-header h1 {
-  margin: 0;
-  margin-left: 20px;
-  line-height: 65px;
-  display: inline-block;
-}
-
+/*
 @media (max-width:767px) {
   #wrapper {
     padding-left: 70px;
@@ -134,4 +142,4 @@
     width: 150px;
     transition: all .4s ease 0s;
   }
-}
+} */
