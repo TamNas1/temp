@@ -3,24 +3,6 @@ const passVal = document.getElementById('password');
 const loginBtn = document.getElementById('signIn');
 const announceTxt = document.getElementById('Announce');
 
-loginBtn.addEventListener('click', (e) => {
-  if (userVal.value.trim() == '') {
-    announceTxt.innerText = 'Username cannot be empty';
-    announceTxt.style.color = 'red';
-    userVal.style.border = '1px red solid';
-  } else if (passVal.value.trim() == '') {
-    announceTxt.innerText = 'Password cannot be empty';
-    announceTxt.style.color = 'red';
-    userVal.style.border = '1px white solid';
-    passVal.style.border = '1px red solid';
-  } else {
-    userVal.style.border = '1px white solid';
-    passVal.style.border = '1px white solid';
-
-    e.preventDefault();
-    fetchsignIn(loginBtn.value, signin);
-  }
-});
 function fetchsignIn(value, cb) {
   fetch('/signin', {
     method: 'POST',
@@ -55,3 +37,22 @@ function signin(data) {
     announceTxt.style.color = 'red';
   }
 }
+
+loginBtn.addEventListener('click', (e) => {
+  if (userVal.value === '') {
+    announceTxt.innerText = 'Username cannot be empty';
+    announceTxt.style.color = 'red';
+    userVal.style.border = '1px red solid';
+  } else if (passVal.value === '') {
+    announceTxt.innerText = 'Password cannot be empty';
+    announceTxt.style.color = 'red';
+    userVal.style.border = '1px white solid';
+    passVal.style.border = '1px red solid';
+  } else {
+    userVal.style.border = '1px white solid';
+    passVal.style.border = '1px white solid';
+
+    e.preventDefault();
+    fetchsignIn(loginBtn.value, signin);
+  }
+});
