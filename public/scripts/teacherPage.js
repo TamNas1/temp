@@ -1,7 +1,9 @@
 const containerSubSubjects = document.getElementById('subSubjects');
 const bodyTag = document.getElementsByTagName('body')[0];
+const signOutBtn = document.getElementById('signout');
 
-bodyTag.style.display = "none";
+bodyTag.style.display = 'none';
+signOutBtn.style.display = 'none';
 
 function updateDom(data) {
   if (data) {
@@ -25,9 +27,23 @@ else {
 
   const userAuthentication = (data) => {
     if (data.redirect) location.href = data.url;
-    else bodyTag.style.display = "block";
+    else {
+      bodyTag.style.display = 'block';
+      signOutBtn.style.display = 'inline-block';
+    }
   };
 }
+
+signOutBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  fetch('/logout')
+    .then(res => res.json())
+    .then(data => logOut(data));
+});
+const logOut = (data) => {
+  if (data.logOut) location.href = '/';
+};
 
 fetch('/getSubSubjects')
   .then(res => res.json())
