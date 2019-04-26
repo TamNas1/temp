@@ -20,6 +20,8 @@
 
     "eqeqeq":2,
 
+    "no-restricted-globals":0,
+
     "indent": 2,
 
     "quotmark": "single",
