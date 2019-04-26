@@ -16,6 +16,18 @@ function fetchsignIn(value, cb) {
       cb(data.msg);
     });
 }
+
+if (document.cookie) {
+  fetch('/checkauth')
+    .then(res => res.json())
+    .then(data => userAuthentication(data))
+    .catch(err => console.log(err));
+
+  const userAuthentication = (data) => {
+    if (!data.redirect) location.href = '/subjects';
+  };
+}
+
 function signin(data) {
   announceTxt.innerText = data;
 
