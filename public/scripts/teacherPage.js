@@ -1,4 +1,7 @@
 const containerSubSubjects = document.getElementById('subSubjects');
+const bodyTag = document.getElementsByTagName('body')[0];
+
+bodyTag.style.display = "none";
 
 function updateDom(data) {
   if (data) {
@@ -22,6 +25,7 @@ else {
 
   const userAuthentication = (data) => {
     if (data.redirect) location.href = data.url;
+    else bodyTag.style.display = "block";
   };
 }
 
