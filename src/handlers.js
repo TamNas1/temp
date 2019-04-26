@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
+const ppcookie = require('cookie');
+const { sign, verify } = require('jsonwebtoken');
+const env = require('env2');
+const utils = require('../utils/utils');
 const queries = require('../queries/sql.js');
+
+env('./config.env');
 
 const extensionTypes = {
   html: {
@@ -61,11 +67,24 @@ const handleSignIn = (req, res) => {
       queries.checkPassword(data.user, (err, success) => {
         let message = '';
         if (success.rows[0]) {
-          success.rows[0].password === data.pass ? message = 'Successfully logged in' : message = 'Invalid username/password';
-        } else {
-          message = "Username doesn't exist";
-        }
-        res.writeHead(200, { 'content-type': 'text/html' });
+          success.rows[0].password === data.pass
+            ? (message = 'Successfully logged in')
+            : (message = 'Invalid username/password');
+          if (message === 'Successfully logged in') {
+            const userDetails = {
+              'content-type': 'application/json',
+              u$u: data.user,
+              u$p: data.pass,
+            };
+            console.log('signed');
+            const cookie = sign(userDetails, process.env.SECRET);
+            res.writeHead(200, {
+              'Set-Cookie': `udetails=${cookie};`,
+              'content-type': 'application/json',
+            });
+          }
+        } else message = "Username doesn't exist";
+
         res.end(JSON.stringify({ msg: message }));
       });
     }
@@ -96,11 +115,46 @@ const handleSubSubjects = (res) => {
   });
 };
 
+const handleCheckUserAuthentication = (req, res) => {
+  if (!req.headers.cookie) res.end(JSON.stringify({ redirect: true, url: '/' }));
+  else {
+    let jwt;
+    try {
+      jwt = ppcookie.parse(req.headers.cookie);
+    } catch (error) {
+      res.end(JSON.stringify({ redirect: true, url: '/' }));
+    }
+    if (jwt) {
+      verify(jwt.udetails, process.env.SECRET, (err, jwt) => {
+        if (err) res.end(JSON.stringify({ redirect: true, url: '/' }));
+
+        if (!jwt) res.end(JSON.stringify({ redirect: true, url: '/' }));
+        else {
+          const { u$u, u$p } = jwt;
+
+          queries.checkPassword(u$u, (err, result) => {
+            if (err) console.log(err);
+            else if (result.rowCount == 0) res.end(JSON.stringify({ redirect: true, url: '/' }));
+            else if (result.rowCount == 1) {
+              utils.comparePasswords(u$p, result.rows[0].password, (err, success) => {
+                if (err) res.end(JSON.stringify({ redirect: true, url: '/' }));
+                else if (success) res.end(JSON.stringify({ redirect: false }));
+                else res.end(JSON.stringify({ redirect: true, url: '/' }));
+              });
+            }
+          });
+          res.end(JSON.stringify({ redirect: false, url: '/' }));
+        }
+      });
+    }
+  }
+};
 
 module.exports = {
   page: handlePage,
   public: handlePublic,
   signIn: handleSignIn,
+  checkAuth: handleCheckUserAuthentication,
   handleSubjects,
   handleHomeworks,
   handleSubSubjects,

@@ -12,6 +12,19 @@ function updateDom(data) {
     });
   }
 }
+
+if (!document.cookie) location.href = '/';
+else {
+  fetch('/checkauth')
+    .then(res => res.json())
+    .then(data => userAuthentication(data))
+    .catch(err => console.log(err));
+
+  const userAuthentication = (data) => {
+    if (data.redirect) location.href = data.url;
+  };
+}
+
 fetch('/getSubSubjects')
   .then(res => res.json())
   .then((data) => {
