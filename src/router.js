@@ -3,7 +3,11 @@ const handle = require('./handlers.js');
 const router = (req, res) => {
   const url = req.url;
   if (url === '/') handle.page('login', res);
-  else if (url === '/student') handle.page('student', res);
+  else if (url === '/student') {
+    res.writeHead(302, { location: '/' });
+    res.end();
+  } else if (url.indexOf('/student?') !== -1) handle.page('student', res);
+  else if (url === '/getsubjectdetails') handle.subject(req, res);
   else if (url === '/teacher') handle.page('teacher', res);
   else if (url === '/subjects') handle.page('subjects', res);
   else if (url === '/signin') handle.signIn(req, res);

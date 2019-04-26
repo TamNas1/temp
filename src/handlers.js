@@ -157,12 +157,33 @@ const handleLogOut = (res) => {
   res.end(JSON.stringify({ logOut: true }));
 };
 
+const handleSubjectPage = (req, res) => {
+  let body = '';
+  req.on('data', (chunk) => {
+    body += chunk.toString();
+  });
+  req.on('end', () => {
+    if (body != null) {
+      body = JSON.parse(body);
+      queries.selectSubSubjectBySubjectId(body.subjectid, (err, data) => {
+        if( err ) handle500(res);
+
+        if( data)
+        res.end(JSON.stringify({ data: data.rows }));
+        else
+        handle500(res);
+      });
+    }
+  });
+};
+
 module.exports = {
   page: handlePage,
   public: handlePublic,
   signIn: handleSignIn,
   logOut: handleLogOut,
   checkAuth: handleCheckUserAuthentication,
+  subject: handleSubjectPage,
   handleSubjects,
   handleHomeworks,
   handleSubSubjects,

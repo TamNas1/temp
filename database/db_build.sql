@@ -46,9 +46,9 @@ CREATE TABLE IF NOT EXISTS sub_subjects(
 
 INSERT INTO sub_subjects(name, subject_id, data) VALUES
 ('Functions1',1,'this is this but this is not this1'),
-('Functions2',2,'this is this but this is not this2'),
-('Functions2',2,'this is this but this is not this3'),
-('Functions3',3,'this is this but this is not this4'),
+('jbr',2,'this is this but this is not this2'),
+('motlt karam paromoda',2,'this is this but this is not this3'),
+('asd',3,'this is this but this is not this4'),
 ('Functions4',4,'this is this but this is not this5');
 
 
