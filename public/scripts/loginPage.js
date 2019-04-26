@@ -4,7 +4,7 @@ const loginBtn = document.getElementById('signIn');
 const announceTxt = document.getElementById('Announce');
 const bodyTag = document.getElementsByTagName('body')[0];
 
-bodyTag.style.display = "none";
+bodyTag.style.display = 'none';
 
 function fetchsignIn(value, cb) {
   fetch('/signin', {
@@ -28,10 +28,9 @@ if (document.cookie) {
 
   const userAuthentication = (data) => {
     if (!data.redirect) location.href = '/subjects';
-    else bodyTag.style.display = "block";
-
+    else bodyTag.style.display = 'block';
   };
-}
+} else bodyTag.style.display = 'block';
 
 function signin(data) {
   announceTxt.innerText = data;
