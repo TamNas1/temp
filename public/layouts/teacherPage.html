@@ -1,98 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <link rel="shortcut icon" type="image/png" href="../../public/assests/logo.png" />
+    <link rel="stylesheet" type="text/css" href="../../public/styles/teacherPage.css" />
+    <link rel="stylesheet" type="text/css" href="../../public/styles/elemnts.css" />
+    <link rel="stylesheet" type="text/css" href="../../public/styles/sidebar-template.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-compatible" content="ie-edge" />
+    <meta name="description" content="Assisted" />
+    <meta name="keywords" content="Assisted" />
+    <meta name="author" content="Karam Ashqar, Shadi Rayan, Tamer Nasser, Majd Yaqoub" />
+    <title>AssistED</title>
+  </head>
 
-<head>
-  <link rel="shortcut icon" type="image/png" href="../../public/assests/logo.png" />
-  <link rel="stylesheet" type="text/css" href="../../public/styles/teacherPage.css" />
-  <link rel="stylesheet" type="text/css" href="../../public/styles/elemnts.css" />
-  <link rel="stylesheet" type="text/css" href="../../public/styles/sidebar-template.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-compatible" content="ie-edge" />
-  <meta name="description" content="Assisted" />
-  <meta name="keywords" content="Assisted" />
-  <meta name="author" content="Karam Ashqar, Shadi Rayan, Tamer Nasser, Majd Yaqoub" />
-  <title>AssistED</title>
-</head>
-
-<body>
-  <div class="header">
-    <h1 class="subject">LOGO</h1>
-    <h1 class="subject">Subject Name</h1>
-    <div><img id="our-logo" src="../../public/assests/logo.png" id="logo" /></div>
-  </div>
-  <hr />
-
-  <div id="wrapper">
-    <div id="sidebar-wrapper">
-      <div id="sidebar_menu sidebar" class="sidebar-nav">
-        <div onclick="mytoggle()">
-          <li id="menu-toggle" class="sidebar-brand">
-            <a href="#">Menu <img id="arrow" src="public/assests/arrow.png" alt=""></a>
-          </li>
-        </div>
-      </div>
-
-      <ul class="sidebar-nav" id="subSubjects">
-
-      </ul>
+  <body style="display:none;">
+    <div class="header">
+      <h1 class="subject">LOGO</h1>
+      <h1 class="subject">Subject Name</h1>
+      <div><img id="our-logo" src="../../public/assests/logo.png" id="logo" /></div>
     </div>
+    <hr />
 
-    <!-- Page content -->
-    <div id="page-content-wrapper">
-      <!-- Keep all page content within the page-content inset div! -->
-      <div class="page-content inset">
-        <div class="content">
-
-          <div id="video-container">
-            <iframe src="https://www.youtube.com/embed/ogqpqnx38uc" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-          </div>
-
-          <hr />
-
-          <div id="data">
-            <p>
-              A function is a rule which relates the values of one variable quantity to the values of another variable quantity, and does so in such a way that the value of the second variable quantity is uniquely determined by (i.e. is a function
-              of)
-              the value of
-              the first variable quantity.
-            </p>
-            <p>
-              A function is a rule which relates the values of one variable quantity to the values of another variable quantity, and does so in such a way that the value of the second variable quantity is uniquely determined by (i.e. is a function
-              of)
-              the value of
-              the first variable quantity.
-            </p>
-          </div>
-
-          <hr />
-
-          <div class="edit-homework">
-            <ol>
-              <li>
-                <a href="#">Sample homework1.</a>
-                <button type="button" class="btn" name="Edit">Edit</button>
-                <button type="button" class="btn" name="Print">Print</button>
-              </li>
-              <li>
-                <a href="#">Sample homework2.</a>
-                <button type="button" class="btn" name="Edit">Edit</button>
-                <button type="button" class="btn" name="Print">Print</button>
-              </li>
-              <li>
-                <a href="#">Sample homework3.</a>
-                <button type="button" class="btn" name="Edit">Edit</button>
-                <button type="button" class="btn" name="Print">Print</button>
-              </li>
-            </ol>
+    <div id="wrapper">
+      <div id="sidebar-wrapper">
+        <div id="sidebar_menu sidebar" class="sidebar-nav">
+          <div onclick="mytoggle()">
+            <li id="menu-toggle" class="sidebar-brand">
+              <a href="#">Menu <img id="arrow" src="public/assests/arrow.png" alt=""/></a>
+            </li>
           </div>
         </div>
 
+        <ul class="sidebar-nav" id="subSubjects"></ul>
+      </div>
+
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <!-- Keep all page content within the page-content inset div! -->
+        <div class="page-content inset">
+          <div class="content">
+            <div id="video-container">
+              <iframe
+                src="https://www.youtube.com/embed/ogqpqnx38uc"
+                frameborder="1"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              ></iframe>
+            </div>
+
+            <hr />
+
+            <div id="data">
+              <p>
+                A function is a rule which relates the values of one variable quantity to the values
+                of another variable quantity, and does so in such a way that the value of the second
+                variable quantity is uniquely determined by (i.e. is a function of) the value of the
+                first variable quantity.
+              </p>
+              <p>
+                A function is a rule which relates the values of one variable quantity to the values
+                of another variable quantity, and does so in such a way that the value of the second
+                variable quantity is uniquely determined by (i.e. is a function of) the value of the
+                first variable quantity.
+              </p>
+            </div>
+
+            <hr />
+
+            <div class="edit-homework">
+              <ol>
+                <li>
+                  <a href="#">Sample homework1.</a>
+                  <button type="button" class="btn" name="Edit">Edit</button>
+                  <button type="button" class="btn" name="Print">Print</button>
+                </li>
+                <li>
+                  <a href="#">Sample homework2.</a>
+                  <button type="button" class="btn" name="Edit">Edit</button>
+                  <button type="button" class="btn" name="Print">Print</button>
+                </li>
+                <li>
+                  <a href="#">Sample homework3.</a>
+                  <button type="button" class="btn" name="Edit">Edit</button>
+                  <button type="button" class="btn" name="Print">Print</button>
+                </li>
+              </ol>
+            </div>
+            <button type="button" id="signout" name="button">Sign out</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src="../../public/scripts/teacherPage.js"></script>
-</body>
-
+    <script src="../../public/scripts/teacherPage.js"></script>
+  </body>
 </html>

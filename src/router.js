@@ -12,6 +12,7 @@ const router = (req, res) => {
   else if (url === '/getHomeworks') handle.handleHomeworks(res);
   else if (url === '/getSubSubjects') handle.handleSubSubjects(res);
   else if (url === '/checkauth') handle.checkAuth(req, res);
+  else if (url === '/logout') handle.logOut(res);
   else handle.page('404', res);
 };
 

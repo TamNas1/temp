@@ -150,10 +150,18 @@ const handleCheckUserAuthentication = (req, res) => {
   }
 };
 
+const handleLogOut = (res) => {
+  res.writeHead(200, {
+    'Set-Cookie': 'udetails=0; Max-Age=0;',
+  });
+  res.end(JSON.stringify({ logOut: true }));
+};
+
 module.exports = {
   page: handlePage,
   public: handlePublic,
   signIn: handleSignIn,
+  logOut: handleLogOut,
   checkAuth: handleCheckUserAuthentication,
   handleSubjects,
   handleHomeworks,
