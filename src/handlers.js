@@ -76,7 +76,7 @@ const handleSignIn = (req, res) => {
               u$u: data.user,
               u$p: data.pass,
             };
-
+            console.log('signed');
             const cookie = sign(userDetails, process.env.SECRET);
             res.writeHead(200, {
               'Set-Cookie': `udetails=${cookie};`,
@@ -85,7 +85,6 @@ const handleSignIn = (req, res) => {
           }
         } else message = "Username doesn't exist";
 
-        res.writeHead(200, { 'content-type': 'text/html' });
         res.end(JSON.stringify({ msg: message }));
       });
     }
@@ -117,43 +116,35 @@ const handleSubSubjects = (res) => {
 };
 
 const handleCheckUserAuthentication = (req, res) => {
-  if (!req.headers.cookie)
-    res.end(JSON.stringify({ redirect: true, url: "/" }));
-   else {
+  if (!req.headers.cookie) res.end(JSON.stringify({ redirect: true, url: '/' }));
+  else {
     let jwt;
     try {
       jwt = ppcookie.parse(req.headers.cookie);
     } catch (error) {
-      res.end(JSON.stringify({ redirect: true, url: "/" }));
+      res.end(JSON.stringify({ redirect: true, url: '/' }));
     }
     if (jwt) {
       verify(jwt.udetails, process.env.SECRET, (err, jwt) => {
-        if (err) res.end(JSON.stringify({ redirect: true, url: "/" }));
+        if (err) res.end(JSON.stringify({ redirect: true, url: '/' }));
 
-        const { u$u, u$p } = jwt;
+        if (!jwt) res.end(JSON.stringify({ redirect: true, url: '/' }));
+        else {
+          const { u$u, u$p } = jwt;
 
-        sql.getUsernamePassword(u$u, (err, result) => {
-          if (err) console.log(err);
-          else {
-            if (result.rowCount == 0)
-              res.end(JSON.stringify({ redirect: true, url: "/" }));
+          queries.checkPassword(u$u, (err, result) => {
+            if (err) console.log(err);
+            else if (result.rowCount == 0) res.end(JSON.stringify({ redirect: true, url: '/' }));
             else if (result.rowCount == 1) {
-              utils.comparePasswords(
-                u$p,
-                result.rows[0].password,
-                (err, success) => {
-                  if (err)
-                    res.end(JSON.stringify({ redirect: true, url: "/" }));
-                  else {
-                    if (!success) res.end(JSON.stringify({ redirect: false }));
-                    else res.end(JSON.stringify({ redirect: true, url: "/" }));
-                  }
-                }
-              );
+              utils.comparePasswords(u$p, result.rows[0].password, (err, success) => {
+                if (err) res.end(JSON.stringify({ redirect: true, url: '/' }));
+                else if (success) res.end(JSON.stringify({ redirect: false }));
+                else res.end(JSON.stringify({ redirect: true, url: '/' }));
+              });
             }
-          }
-        });
-        res.end(JSON.stringify({ redirect: false, url: "/" }));
+          });
+          res.end(JSON.stringify({ redirect: false, url: '/' }));
+        }
       });
     }
   }
@@ -163,7 +154,7 @@ module.exports = {
   page: handlePage,
   public: handlePublic,
   signIn: handleSignIn,
-  checkAuth: hnadleCheckUserAuthentication
+  checkAuth: handleCheckUserAuthentication,
   handleSubjects,
   handleHomeworks,
   handleSubSubjects,
